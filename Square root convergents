@@ -1,0 +1,13 @@
+n=int(input().strip())
+numerators=[1]
+denominators=[2]
+i=2
+while i<=n:
+    numerators.append(denominators[-1])
+    denominators.append(denominators[-1]*2+numerators[-2])
+    i+=1
+for i in range(n):
+    n=denominators[i]+numerators[i]
+    d=denominators[i]
+    if len(str(n))>len(str(d)):
+        print(i+1)
